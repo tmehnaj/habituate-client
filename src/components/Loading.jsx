@@ -1,11 +1,29 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-const Loading = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+
+export default function Rotate() {
+    const box = {
+    width: 50,
+    height: 50,
+    backgroundColor: '#9F62F2',
+    borderRadius: 5,
+    margin: 12,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'white'
 };
 
-export default Loading;
+    return (
+       <div className='container mx-auto flex justify-center items-center min-h-screen'>
+         <span className='text-5xl font-bold'>L</span><motion.div
+            style={box}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }} 
+        /><span className='text-5xl font-bold'>ading</span>
+       </div>
+    );
+}
+
+
