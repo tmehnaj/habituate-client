@@ -56,6 +56,7 @@ const LogIn = () => {
     else if (email.startsWith('@') || email.endsWith('@')) { setError('email can not starts or ends with @') }
     else if (!emailDomains.includes(domain)) { setError('please provide a correct domain') }
     else if (!regxForEmail.test(email)){ setError('please enter a valid email address!') }
+    else{setError('')}
   }
 
 
@@ -73,7 +74,7 @@ const LogIn = () => {
         toast.success('Log In Successfully!');
         e.target.reset();
         setLoading(false);
-        navigate(location?.state || '/#');
+        navigate(location?.state || '/');
       })
       .catch(err => {
         //  console.log(err.message);
@@ -158,7 +159,7 @@ const LogIn = () => {
                                 // value={email}
                                 // onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Enter your Email"
-                                className="input input-bordered w-full bg-white/20 text-accent-content focus:outline-none focus:ring-2 focus:ring-blue-200"
+                                className="input input-bordered w-full bg-white/20 text-accent-content focus:outline-none focus:ring-2 focus:ring-blue-200 rounded-lg"
                             />
                         </div>
 
@@ -170,7 +171,7 @@ const LogIn = () => {
                                 placeholder="Enter Your Password"
                                 autoComplete="off"
                                 autoCorrect="off"
-                                className="input input-bordered w-full bg-white/20 text-accent-content focus:outline-none focus:ring-2 focus:ring-blue-200"
+                                className="input input-bordered w-full bg-white/20 text-accent-content focus:outline-none focus:ring-2 focus:ring-blue-200 rounded-lg"
                             />
                             <span
                                 onClick={() => setShow(!show)}
@@ -178,13 +179,14 @@ const LogIn = () => {
                             >
                                 {show ? <FaEye /> : <IoEyeOff />}
                             </span>
-                        </div>
-
-                        <p
+                             <p
                             className="hover:underline cursor-pointer"
                         >
                             Forget password?
                         </p>
+                        </div>
+
+                       
 
                         <button type="submit" className="btn2">
                             Login
@@ -192,7 +194,7 @@ const LogIn = () => {
 
                          {/* error */}
               {
-                error ? <p className='text-red-700 font-semibold py-2'>{error}</p> : ''
+                error ? <p className='text-red-700 font-semibold'>{error}</p> : ''
               }
 
                         {/* Divider */}

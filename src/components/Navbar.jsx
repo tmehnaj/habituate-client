@@ -133,8 +133,7 @@ const Navbar = () => {
             to={"/login"}
             className="btn1"
           >
-            {" "}
-            <IoLogIn /> Login
+             Login
           </Link>
         )}
 
