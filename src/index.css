@@ -1,78 +1,68 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-
-
-nav a.active li{
-  @apply text-transparent bg-clip-text bg-linear-[-70deg,#6D4AFF,#8F6FFF] border-b-2 border-[#632EE3]
-
+@plugin "daisyui/theme" {
+    name: "light";
+    default: true;
+    --color-primary: #2563EB;        /* Blue 600 - main buttons/links */
+    --color-secondary: #3B82F6;      /* Blue 500 - secondary highlights */
+    --color-accent: #1D4ED8;          /* Blue 700 - for important buttons/alerts */
+    --color-accent-content: #302e2e;  /* White text on accent */
+    --color-neutral: #1E293B;         /* Dark blue-gray for text/neutral elements */
+    --color-success: #22C55E;         /* Green for success messages */
+    --color-warning: #FACC15;         /* Yellow/amber for warnings */
+    --color-error: #EF4444;           /* Red for errors */
 }
 
-/* From Uiverse.io by shah1345 */ 
-.button2 {
-  display: inline-block;
-  transition: all 0.2s ease-in;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  color: #090909;
-  padding: 0.7em 1.7em;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+@plugin "daisyui/theme" {
+    name: "dark";
+    default: true;
+    --color-primary: #2563EB;        /* Blue 600 - main buttons/links */
+    --color-secondary: #3B82F6;      /* Blue 500 - secondary highlights */
+    --color-accent: #1D4ED8;          /* Blue 700 - for important buttons/alerts */
+    --color-accent-content: white;  /* White text on accent */
+    --color-neutral: white;         /* Dark blue-gray for text/neutral elements */
+    --color-success: #22C55E;         /* Green for success messages */
+    --color-warning: #FACC15;         /* Yellow/amber for warnings */
+    --color-error: #EF4444;           /* Red for errors */
 }
 
-.button2:active {
-  color: #666;
-  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+ /* --color-base-100: #EAF2FF;         Light blue background 
+    --color-base-200: #D0E2FF;        Slightly darker for cards/sections 
+    --color-base-300: #A9CBFF;        For section backgrounds or subtle accents  */
+
+/* common */
+nav a li {
+    @apply font-semibold transition-colors duration-200 text-accent-content;
 }
 
-.button2:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.25);
-  top: 100%;
-  width: 140%;
-  height: 180%;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  display: block;
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
+nav a.active li {
+    @apply text-primary font-medium font-medium
 }
 
-.button2:after {
-  content: "";
-  position: absolute;
-  left: 55%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.45);
-  top: 180%;
-  width: 160%;
-  height: 190%;
-  background-color: #009087;
-  border-radius: 50%;
-  display: block;
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
+nav a:hover {
+    @apply text-primary font-medium
 }
 
-.button2:hover {
-  color: #ffffff;
-  border: 1px solid #009087;
+footer nav a {
+    text-decoration: none;
 }
 
-.button2:hover:before {
-  top: -35%;
-  background-color: #009087;
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+footer nav a:hover {
+    color: #b9b9b9;
 }
 
-.button2:hover:after {
-  top: -45%;
-  background-color: #009087;
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+h1{
+    @apply text-3xl md:text-5xl font-extrabold text-neutral
 }
+h2{
+    @apply text-xl md:text-2xl font-bold text-neutral
+}
+
+.btn1{
+    @apply px-4 py-1 border-3 border-primary text-primary bg-transparent rounded-md font-semibold hover:bg-accent hover:text-white transition-colors duration-300
+}
+.btn2{
+    @apply px-4 py-1.5 border-2 border-primary text-primary bg-transparent rounded-lg font-bold text-base hover:bg-accent hover:text-white transition-colors duration-300 w-full
+}
+

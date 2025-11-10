@@ -1,44 +1,48 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+import logoImg from '../assets/logo.png'
 const Footer = () => {
     return (
-       <footer className=" bg-[#001931] text-primary-content">
+       <footer className=" bg-accent text-white">
   <div className='footer sm:footer-horizontal container mx-auto py-10  text-center md:text-left'>
     <aside className='flex flex-col  text-left'>
    <Link to="/">
     <figure className='h-[50px] w-[50px]'>
-        <img src="" alt="" />
+        <img src={logoImg} alt="" />
     </figure>
-    <h6 className="footer-title mt-2 mb-0 pb-0">Habituate</h6>
+    <h6 className="text-xl font-bold text-[#D0E2FF] mt-2 mb-0 pb-0">Habituate</h6>
    </Link>
     <p className='mt-0 pt-0'>
-      Make Your Life Beautiful
+      Make Your Life Beautiful with Us
     </p>
   </aside>
   <nav>
-    <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Web App Development</a>
-    <a className="link link-hover">UI/UX Design</a>
-    <a className="link link-hover">App Maintenance</a>
-    <a className="link link-hover">API Integration</a>
+    <h6 className="footer-title">Features</h6>
+    <a className="link link-hover">Habit Tracking</a>
+    <a className="link link-hover">Streaks</a>
+    <a className="link link-hover">Reminder</a>
+    <a className="link link-hover">Analytics</a>
   </nav>
   <nav>
-    <h6 className="footer-title">Company</h6>
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <h6 className="footer-title">Explore</h6>
+    <a className="link link-hover">About Habituate</a>
+    <a className="link link-hover">Blog</a>
+    <a className="link link-hover">Resources</a>
+    <a className="link link-hover">Community</a>
   </nav>
   <nav>
-    <h6 className="footer-title">Legal</h6>
+    <h6 className="footer-title">Support</h6>
+    <a className="link link-hover">FAQ</a>
+    <a className="link link-hover">Contact Support</a>
     <a className="link link-hover">Terms of use</a>
     <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
   </nav>
   
   </div>
-  <div className='border-t-1 border-gray-800 container mx-auto px-10 py-5 flex flex-col items-center gap-3 text-xs'>
+  <hr className=" border-gray-300 mx-4"/>
+
+   
+  <div className='container mx-auto px-10 py-5 flex flex-col items-center gap-3 text-xs'>
         <nav>
     <div className="flex gap-4 ">
       <a>
@@ -77,7 +81,7 @@ const Footer = () => {
     </div>
   </nav>
   <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+    <p>Copyright © {new Date().getFullYear()} - All rights reserved by Habituate</p>
   </aside>
   </div>
 </footer>
