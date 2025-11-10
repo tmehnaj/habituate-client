@@ -5,6 +5,9 @@ import LogIn from "../pages/LogIn";
 import Register from "../pages/Register";
 import NotFound from "../pages/NotFound";
 import About from "../pages/About";
+import MyProfile from "../pages/MyProfile";
+import PrivateRoutes from "./PrivateRoutes";
+import AlreadyLoggedInRoutes from "./AlreadyLoggedInRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -20,12 +23,22 @@ export const router = createBrowserRouter([
                 element: <About></About>,
             },
             {
+                path: 'myProfile',
+                element: <PrivateRoutes>
+                    <MyProfile></MyProfile>
+                </PrivateRoutes>
+            },
+            {
                 path: 'login',
-                element: <LogIn></LogIn>,
+                element: <AlreadyLoggedInRoutes>
+                    <LogIn></LogIn>
+                </AlreadyLoggedInRoutes>,
             },
             {
                 path: 'register',
-                element: <Register></Register>,
+                element: <AlreadyLoggedInRoutes>
+                    <Register></Register>
+                </AlreadyLoggedInRoutes>,
             },
             {
                 path: "*",

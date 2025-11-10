@@ -13,7 +13,7 @@ const NotFound = () => {
             <p className='text-accent-content'>The page you are looking for is not available.</p>
         <div className='flex items-center justify-between gap-3'>
                         <button onClick={() => { navigate(-1) }} className="btn1">Go Back!</button>
-            <button onClick={() => { navigate('/') }} className="btn1">Go Home!</button>
+            <button onClick={() => { navigate('/') }} className="btn1-fill">Go Home!</button>
 
         </div>
 

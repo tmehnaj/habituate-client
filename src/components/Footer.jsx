@@ -4,7 +4,7 @@ import logoImg from '../assets/logo.png'
 const Footer = () => {
     return (
        <footer className=" bg-accent text-white">
-  <div className='footer sm:footer-horizontal container mx-auto py-10  text-center md:text-left'>
+  <div className='footer sm:footer-horizontal container mx-auto p-9  text-center md:text-left'>
     <aside className='flex flex-col  text-left'>
    <Link to="/">
     <figure className='h-[50px] w-[50px]'>

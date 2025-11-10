@@ -60,9 +60,12 @@ h2{
 }
 
 .btn1{
-    @apply px-4 py-1 border-3 border-primary text-primary bg-transparent rounded-md font-semibold hover:bg-accent hover:text-white transition-colors duration-300
+    @apply px-4 py-1 border-3 border-primary text-primary bg-transparent rounded-md font-semibold hover:bg-accent hover:text-white transition-colors duration-300 whitespace-nowrap
+}
+.btn1-fill{
+    @apply px-4 py-1 border-3 border-primary bg-primary rounded-md font-semibold hover:bg-accent text-white btn-soft whitespace-nowrap
 }
 .btn2{
-    @apply px-4 py-1.5 border-2 border-primary text-primary bg-transparent rounded-lg font-bold text-base hover:bg-accent hover:text-white transition-colors duration-300 w-full
+    @apply px-4 py-1.5 border-2 border-primary text-primary bg-transparent rounded-lg font-bold text-base hover:bg-accent hover:text-white transition-colors duration-300 w-full whitespace-nowrap
 }
 
