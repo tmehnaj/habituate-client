@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { FaEye } from 'react-icons/fa';
 import { IoEyeOff } from 'react-icons/io5';
 import { Link, useLocation, useNavigate } from 'react-router';
-
 import { toast } from 'react-toastify';
 import { AuthContext } from '../context/Context';
 
@@ -43,7 +42,7 @@ const LogIn = () => {
                 navigate(location?.state || '/');
             })
             .catch(err => {
-                //  console.log(err.message);
+               console.log(err.code);
 
 
                 if (err.code === 'auth/invalid-email') {
@@ -112,7 +111,7 @@ const LogIn = () => {
                 <div className="w-full max-w-md backdrop-blur-lg bg-white/10 border border-white/20 shadow-2xl rounded-2xl p-8">
                     <h2 className=" mb-2 text-center">LogIn Now</h2>
 
-                    <form onSubmit={()=>{handleLogIn(e)}} className="space-y-4">
+                    <form onSubmit={handleLogIn} className="space-y-4">
                         <div>
                             <label className="block text-sm mb-1">Email</label>
                             <input
@@ -172,6 +171,7 @@ const LogIn = () => {
                             className="w-5 h-5"
                         />
                         Continue with Google </button>
+                        <p>New to Our Website? Please <Link to="/register" className='underline text-primary py-2'>Sign Up</Link></p>
                 </div>
             </div>
 
