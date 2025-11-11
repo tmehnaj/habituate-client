@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import logoImg from '../assets/logo.png'
 import userIcon from '../assets/user.png'
 import { AuthContext } from '../context/Context';
@@ -9,12 +9,15 @@ import { toast } from 'react-toastify';
 
 const Navbar = () => {
   const {user, loading, logOutUser} = useContext(AuthContext);
+    const navigate = useNavigate();
 
   const links = <>
     <NavLink to='/'><li className="px-2 pb-0.5 border-b-2 border-transparent">Home</li></NavLink>
      <NavLink to='/about'><li className="px-2 pb-0.5 border-b-2 border-transparent">About</li></NavLink>
-    <NavLink to='/apps'><li className="px-2 pb-0.5 border-b-2 border-transparent">Community</li></NavLink>
-    <NavLink to='/installation'><li className="px-2 pb-0.5 border-b-2 border-transparent">MyHabits</li></NavLink>
+    <NavLink to='/publicHabits'><li className="px-2 pb-0.5 border-b-2 border-transparent">Public_Habits</li></NavLink>
+    {
+      user && <NavLink to='/myHabits'><li className="px-2 pb-0.5 border-b-2 border-transparent">MyHabits</li></NavLink>
+    }
   </>
 
   const handleLogOut = ()=>{
@@ -23,9 +26,10 @@ const Navbar = () => {
       .then(() => {
         toast.success('Log Out Successfully!');
         // setLoading(false);
+        navigate('/');
       })
       .catch(err => {
-       // console.log(err);
+       console.log(err);
       })
   }
   
@@ -129,12 +133,8 @@ const Navbar = () => {
 </div>
 
         ) : (
-          <Link
-            to={"/login"}
-            className="btn1"
-          >
-             Login
-          </Link>
+          <Link to={"/login"} className="btn1"
+          > Login </Link>
         )}
 
           {/* <Link to="/login">

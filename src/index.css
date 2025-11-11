@@ -4,30 +4,46 @@
 @plugin "daisyui/theme" {
     name: "light";
     default: true;
-    --color-primary: #2563EB;        /* Blue 600 - main buttons/links */
-    --color-secondary: #3B82F6;      /* Blue 500 - secondary highlights */
-    --color-accent: #1D4ED8;          /* Blue 700 - for important buttons/alerts */
-    --color-accent-content: #302e2e;  /* White text on accent */
-    --color-neutral: #1E293B;         /* Dark blue-gray for text/neutral elements */
-    --color-success: #22C55E;         /* Green for success messages */
-    --color-warning: #FACC15;         /* Yellow/amber for warnings */
-    --color-error: #EF4444;           /* Red for errors */
+    --color-primary: #2563EB;
+    /* Blue 600 - main buttons/links */
+    --color-secondary: #3B82F6;
+    /* Blue 500 - secondary highlights */
+    --color-accent: #1D4ED8;
+    /* Blue 700 - for important buttons/alerts */
+    --color-accent-content: #302e2e;
+    /* White text on accent */
+    --color-neutral: #1E293B;
+    /* Dark blue-gray for text/neutral elements */
+    --color-success: #22C55E;
+    /* Green for success messages */
+    --color-warning: #FACC15;
+    /* Yellow/amber for warnings */
+    --color-error: #EF4444;
+    /* Red for errors */
 }
 
 @plugin "daisyui/theme" {
     name: "dark";
     default: true;
-    --color-primary: #2563EB;        /* Blue 600 - main buttons/links */
-    --color-secondary: #3B82F6;      /* Blue 500 - secondary highlights */
-    --color-accent: #1D4ED8;          /* Blue 700 - for important buttons/alerts */
-    --color-accent-content: white;  /* White text on accent */
-    --color-neutral: white;         /* Dark blue-gray for text/neutral elements */
-    --color-success: #22C55E;         /* Green for success messages */
-    --color-warning: #FACC15;         /* Yellow/amber for warnings */
-    --color-error: #EF4444;           /* Red for errors */
+    --color-primary: #2563EB;
+    /* Blue 600 - main buttons/links */
+    --color-secondary: #3B82F6;
+    /* Blue 500 - secondary highlights */
+    --color-accent: #1D4ED8;
+    /* Blue 700 - for important buttons/alerts */
+    --color-accent-content: white;
+    /* White text on accent */
+    --color-neutral: white;
+    /* Dark blue-gray for text/neutral elements */
+    --color-success: #22C55E;
+    /* Green for success messages */
+    --color-warning: #FACC15;
+    /* Yellow/amber for warnings */
+    --color-error: #EF4444;
+    /* Red for errors */
 }
 
- /* --color-base-100: #EAF2FF;         Light blue background 
+/* --color-base-100: #EAF2FF;         Light blue background 
     --color-base-200: #D0E2FF;        Slightly darker for cards/sections 
     --color-base-300: #A9CBFF;        For section backgrounds or subtle accents  */
 
@@ -37,11 +53,11 @@ nav a li {
 }
 
 nav a.active li {
-    @apply text-primary font-medium font-medium
+    @apply text-primary font-medium
 }
 
-nav a:hover {
-    @apply text-primary font-medium
+nav a li:hover {
+    @apply text-primary font-medium text-shadow-xs text-shadow-[#D0E2FF]
 }
 
 footer nav a {
@@ -52,20 +68,22 @@ footer nav a:hover {
     color: #b9b9b9;
 }
 
-h1{
+h1 {
     @apply text-3xl md:text-5xl font-extrabold text-neutral
 }
-h2{
+
+h2 {
     @apply text-xl md:text-2xl font-bold text-neutral
 }
 
-.btn1{
+.btn1 {
     @apply px-4 py-1 border-3 border-primary text-primary bg-transparent rounded-lg font-semibold hover:bg-accent hover:text-white transition-colors duration-300 whitespace-nowrap
 }
-.btn1-fill{
+
+.btn1-fill {
     @apply px-4 py-1 border-3 border-primary bg-primary rounded-lg font-semibold hover:bg-accent text-white btn-soft whitespace-nowrap
 }
-.btn2{
+
+.btn2 {
     @apply px-4 py-1.5 border-2 border-primary text-primary bg-transparent rounded-lg font-bold text-base hover:bg-accent hover:text-white transition-colors duration-300 w-full whitespace-nowrap
 }
-

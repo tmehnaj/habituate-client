@@ -8,12 +8,14 @@ import About from "../pages/About";
 import MyProfile from "../pages/MyProfile";
 import PrivateRoutes from "./PrivateRoutes";
 import AlreadyLoggedInRoutes from "./AlreadyLoggedInRoutes";
+import PublicHabits from "../pages/PublicHabits";
+import MyHabits from "../pages/MyHabits";
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element:<MainLayout></MainLayout>,
-        children:[
+        element: <MainLayout></MainLayout>,
+        children: [
             {
                 index: true,
                 element: <Home></Home>,
@@ -41,9 +43,20 @@ export const router = createBrowserRouter([
                 </AlreadyLoggedInRoutes>,
             },
             {
-                path: "*",
-                element: <NotFound></NotFound>
+                path: 'publicHabits',
+                element: <PublicHabits></PublicHabits>
+            },
+            {
+                path: 'myHabits',
+                element: <PrivateRoutes>
+                    <MyHabits></MyHabits>
+                </PrivateRoutes>
             }
+
         ]
+    },
+    {
+        path: "*",
+        element: <NotFound></NotFound>
     }
 ])
